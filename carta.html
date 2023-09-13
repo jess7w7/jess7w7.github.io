@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Carta</title>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: yellow;
+        }
+
+        #carta {
+            font-size: 18px;
+            line-height: 1.6; /* Espaciado entre líneas */
+            padding: 20px; /* Margen interior para separar del borde */
+            border: 1px solid #666; /* Borde alrededor de la carta */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con opacidad */
+            white-space: pre-line; /* Para mantener saltos de línea */
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenida <3</h1>
+
+    <h2>Carta</h2>
+    <div id="carta"></div>
+
+    <script>
+        // Contenido de la carta
+        var cartaContenido = `Querida [valeria <3],
+
+Espero que estés bien. Quería tomar un momento para escribirte y dejarte saber cuánto valoro nuestra amistad.
+A lo largo del tiempo que hemos compartido, he llegado a apreciar la camaradería y la confianza que hemos construido.
+Es genial tener a alguien con quien puedo hablar y pasar un buen rato sin complicaciones. 
+Nuestra amistad ha estado marcada por momentos divertidos y coversaciones interesante, y eso... es algo
+que no tomo a la ligera. Aunque no somos de expresar emociones execivamente sentimentales,
+quier que sepas que  respeto y valoro la persona que eres. Me gusta que podamos ser honestos y directos
+el uno con el otro, sin  tener que recurrir a palabras vacias. Asi que... aqui estamos,       
+dos amigos que han compartido risas e momentos  bonitos y experiencias. 
+No importa si las cosas se ponen difíciles, sé que nuestra amistad es lo suficientemente sólida 
+como para superar cualquier obstáculo que se presente.
+
+Espero que sigamos compartiendo buenos momentos y que nuestra amistad continúe creciendo a lo largo del tiempo. 
+Si necesitas algo o simplemente quieres charlar, ya sabes dónde encontrarme.
+
+Cuídate y nos vemos pronto...
+
+
+ Atentamente,
+[Esteban delgado]`;
+
+        var cartaDiv = document.getElementById('carta');
+        var i = 0;
+        var velocidadEscritura = 50; // Velocidad de escritura en milisegundos (ms)
+
+        function escribirCarta() {
+            if (i < cartaContenido.length) {
+                cartaDiv.innerHTML += cartaContenido.charAt(i);
+                i++;
+                setTimeout(escribirCarta, velocidadEscritura);
+            }
+        }
+
+        // Iniciar la animación de escritura cuando la página esté completamente cargada
+        window.onload = function() {
+            escribirCarta();
+        };
+    </script>
+</body>
+</html>
